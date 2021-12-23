@@ -17,5 +17,20 @@ public class Utils {
         arr[i] = arr[i] ^ arr[j];
     }
 
+    /*
+    遍历数组并打印
+     */
+    public static void ergodicInt( int[] arr){
+        for(int x=0;x<arr.length;x++){
+            System.out.print(arr[x]);
+        }
+    }
+    public static void ergodicInteger( Integer[] arr){
+        for(int x=0;x<arr.length;x++){
+            System.out.print(arr[x]);
+            System.out.print(",");
+        }
+    }
+
 
 }
