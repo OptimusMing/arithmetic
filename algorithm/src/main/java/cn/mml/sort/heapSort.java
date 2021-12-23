@@ -1,10 +1,41 @@
 package cn.mml.sort;
 
 
+import cn.mml.Utils;
+
 //堆排序
+/*
+先让数组变成一个大根堆
+
+ */
 public class heapSort {
 
 
+    public static void main(String[] args) {
+        //int[] arr = {2,5,1};
+        int[] arr = {1,3,2,8,4,11,6,3,9,30,21,77,100};
+        heapSort(arr);
+        for(int x=0;x<arr.length;x++){
+            System.out.println(arr[x]);
+        }
+    }
+
+
+    public static void heapSort(int[] arr){
+
+        if(arr== null || arr.length<2){
+            return;
+        }
+        for(int i=0;i<arr.length;i++){//循环数组，依次将数据弄如大根堆
+            heapInsert(arr,i);
+        }
+        int heapSize = arr.length;
+        swap(arr,0,--heapSize);
+        while(heapSize>0){
+            heapify(arr,0,heapSize);
+            swap(arr,0,--heapSize);
+        }
+    }
 
 
     //heapInsert 过程-->某个数出现在index位置，往上继续运动  往上
@@ -29,7 +60,8 @@ public class heapSort {
             if(lagest==index){
                 break;
             }
-            swap(arr,lagest,index);
+            //swap(arr,lagest,index);
+            Utils.swap(arr,lagest,index);
             index = lagest;
             left = index*2+1;
         }
