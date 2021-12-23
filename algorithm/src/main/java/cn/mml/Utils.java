@@ -1,18 +1,20 @@
 package cn.mml;
-//import cn.hutool.core;
 
 public class Utils {
 
-//    private long workerID =0L;
-//    private Snowflake snowflake;
+    public static void swap(int[]  arr,int i ,int j){
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
 
     /*
-    雪花算法
-    分布式获取唯一自增id
-    引入糊涂工具包
+    交换i位置和j位置的值
      */
-    public static void main(String[] args) {
-
+    public static void swap_bit(int[]  arr,int i ,int j){
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
     }
 
 
